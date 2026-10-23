@@ -13,4 +13,4 @@
 - **Verificacion:** ejecutar de nuevo `test_verifica_stock_de_la_cantidad_acumulada_con_mock` y la suite completa; todas pasaron.
 - **Evidencia:** `evidencias/defecto01_fallo.txt`, el codigo en `mercado_sabanero/carrito.py` y el commit `feat: HU-01 agrega carrito y corrige control de stock acumulado`.
 
-**Nota:** las pruebas en rojo al comienzo de un ciclo TDD son esperadas porque todavia no existe la funcionalidad. No se registran como defectos del producto terminado.
+
