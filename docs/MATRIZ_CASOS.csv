@@ -1,0 +1,36 @@
+﻿ID,Historia,Criterio,Descripcion,Entrada o condicion,Resultado esperado,Estado
+T001,HU-01,CA1,Agregar una unidad,"Arroz, stock 100, cant. 1",Carrito guarda 1,Aprobada
+T002,HU-01,CA1,Agregar cincuenta unidades,"Arroz, stock 100, cant. 50",Carrito guarda 50,Aprobada
+T003,HU-01,CA2,Rechazar cero unidades,Cant. 0,Error CantidadInvalida,Aprobada
+T004,HU-01,CA2,Rechazar mas de cincuenta,Cant. 51,Error CantidadInvalida,Aprobada
+T005,HU-01,CA3,No agregar sin suficiente stock,"Stock 3, cant. 4",Error StockInsuficiente,Aprobada
+T006,HU-01,CA4,Sumar producto repetido,Agregar 4 y luego 5,Cantidad final 9,Aprobada
+T007,HU-01,CA3,Comprobar stock acumulado,"Stock 6, agregar 4 y 3",Error StockInsuficiente,Aprobada
+T008,HU-01,CA2,Rechazar total acumulado superior a 50,Agregar 48 y luego 3,Error CantidadInvalida,Aprobada
+T009,HU-02,CA1,Calcular IVA 0%,"Base 100.000, IVA 0%",IVA $0,Aprobada
+T010,HU-02,CA1,Calcular IVA 5%,"Base 100.000, IVA 5%",IVA $5.000,Aprobada
+T011,HU-02,CA1,Calcular IVA 19%,"Base 100.000, IVA 19%",IVA $19.000,Aprobada
+T012,HU-02,CA2,Calcular IVA despues de descuento,"180.000, IVA 19%, dto. 5%",IVA $32.490,Aprobada
+T013,HU-02,CA2,Aplicar descuento al cafe antes de IVA,"30.000, IVA 5%, dto. 5%",IVA $1.425,Aprobada
+T014,HU-02,CA1,Redondear IVA al peso,"Base $10, IVA 5%",IVA $1,Aprobada
+T015,HU-03,CA1,Sin descuento debajo de umbral,Subtotal $199.999,Descuento 0%,Aprobada
+T016,HU-03,CA2,Inicio del tramo 5%,Subtotal $200.000,Descuento 5%,Aprobada
+T017,HU-03,CA2,Final del tramo 5%,Subtotal $499.999,Descuento 5%,Aprobada
+T018,HU-03,CA3,Inicio del tramo 10%,Subtotal $500.000,Descuento 10%,Aprobada
+T019,HU-04,CA1,Usar SABANERO10,Subtotal $50.000,Descuento 10%,Aprobada
+T020,HU-04,CA1,No aplicar SABANERO10 bajo minimo,Subtotal $49.999,Descuento por cupon 0%,Aprobada
+T021,HU-04,CA2,Cupon de envio gratis,"ENVIOGRATIS, destino Sampues",Envio $0,Aprobada
+T022,HU-04,CA3,Cupon inexistente,Codigo FALSO,Error CuponInvalido,Aprobada
+T023,HU-04,CA3,Cupon vencido,Codigo VENCIDO10,Error CuponInvalido,Aprobada
+T024,HU-04,CA4,No sumar descuento 5% y cupon 10%,"Subtotal $220.000, SABANERO10",Descuento final 10%,Aprobada
+T025,HU-05,CA1,Calcular envio en Sincelejo,Pedido gravado/exento $10.000,Envio $8.000,Aprobada
+T026,HU-05,CA1,Calcular envio en otro municipio,"Destino Sampues, $10.000",Envio $15.000,Aprobada
+T027,HU-05,CA2,Envio gratis al alcanzar 150 mil gravados,Gravados netos $150.000,Envio $0,Aprobada
+T028,HU-05,CA2,Exentos no habilitan envio gratis,Exento $180.000,Envio $8.000,Aprobada
+T029,HU-05,CA3,Verificar formula del total,"Cafe $100.000, IVA 5%, Sincelejo",Total $113.000,Aprobada
+T030,HU-05,CA2,Descuento puede desactivar envio gratis,"Gravado $150.000, dto 10%",Envio $8.000,Aprobada
+T031,HU-05,CA3,Caso completo del enunciado,"Licuadora 1, cafes 2, arroces 4",Total $250.515; IVA $33.915,Aprobada
+T032,HU-06,CA1,Otorgar puntos en ejemplo oficial,"Total sin envio $250.515, ESTANDAR",250 puntos,Aprobada
+T033,HU-06,CA2,Duplicar puntos para ORO,"Total sin envio $250.515, ORO",500 puntos,Aprobada
+T034,HU-06,CA1,No otorgar por fraccion de mil,"Total sin envio $999, ESTANDAR",0 puntos,Aprobada
+T035,HU-06,CA1,Excluir envio de los puntos,"Compra $1.000, envio $8.000","1 punto, no 9",Aprobada
