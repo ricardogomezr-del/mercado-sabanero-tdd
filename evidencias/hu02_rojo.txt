@@ -1,0 +1,16 @@
+
+==================================== ERRORS ====================================
+______________________ ERROR collecting tests/test_iva.py ______________________
+ImportError while importing test module '/mnt/data/_build_mercado/mercado-sabanero/tests/test_iva.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_iva.py:3: in <module>
+    from mercado_sabanero.iva import valor_con_descuento, iva_de_linea
+E   ModuleNotFoundError: No module named 'mercado_sabanero.iva'
+=========================== short test summary info ============================
+ERROR tests/test_iva.py
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 0.09s

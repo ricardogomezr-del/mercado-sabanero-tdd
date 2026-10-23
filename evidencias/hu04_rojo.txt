@@ -1,0 +1,16 @@
+
+==================================== ERRORS ====================================
+____________________ ERROR collecting tests/test_cupones.py ____________________
+ImportError while importing test module '/mnt/data/_build_mercado/mercado-sabanero/tests/test_cupones.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_cupones.py:3: in <module>
+    from mercado_sabanero.cupones import CuponInvalido, descuento_cupon, envio_gratis_por_cupon, descuento_final
+E   ModuleNotFoundError: No module named 'mercado_sabanero.cupones'
+=========================== short test summary info ============================
+ERROR tests/test_cupones.py
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 0.10s

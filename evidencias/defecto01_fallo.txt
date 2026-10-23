@@ -1,0 +1,10 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+____________ test_verifica_stock_de_la_cantidad_acumulada_con_mock _____________
+tests/test_carrito.py:69: in test_verifica_stock_de_la_cantidad_acumulada_con_mock
+    with pytest.raises(StockInsuficiente):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'mercado_sabanero.carrito.StockInsuficiente'>
+=========================== short test summary info ============================
+FAILED tests/test_carrito.py::test_verifica_stock_de_la_cantidad_acumulada_con_mock - Failed: DID NOT RAISE <class 'mercado_sabanero.carrito.StockInsuficiente'>
+1 failed in 0.11s

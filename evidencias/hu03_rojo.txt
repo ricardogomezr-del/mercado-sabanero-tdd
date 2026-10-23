@@ -1,0 +1,16 @@
+
+==================================== ERRORS ====================================
+__________________ ERROR collecting tests/test_descuentos.py ___________________
+ImportError while importing test module '/mnt/data/_build_mercado/mercado-sabanero/tests/test_descuentos.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_descuentos.py:3: in <module>
+    from mercado_sabanero.descuentos import porcentaje_volumen
+E   ModuleNotFoundError: No module named 'mercado_sabanero.descuentos'
+=========================== short test summary info ============================
+ERROR tests/test_descuentos.py
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 0.11s
