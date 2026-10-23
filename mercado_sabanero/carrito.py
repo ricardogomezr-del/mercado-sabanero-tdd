@@ -43,13 +43,16 @@ class Carrito:
     def lineas(self):
         return tuple(self._lineas.values())
 
+    @staticmethod
+    def _validar_cantidad(cantidad, acumulada):
+        if type(cantidad) is not int or not 1 <= cantidad <= 50 or acumulada + cantidad > 50:
+            raise CantidadInvalida('Cantidad entre 1 y 50 por producto')
+
     def agregar(self, producto, cantidad):
-        if type(cantidad) is not int or not 1 <= cantidad <= 50:
-            raise CantidadInvalida('Cantidad entre 1 y 50')
         actual = self._lineas.get(producto.codigo)
-        nuevo_total = cantidad + (actual.cantidad if actual else 0)
-        if nuevo_total > 50:
-            raise CantidadInvalida('No se pueden agregar mas de 50 unidades')
+        acumulada = actual.cantidad if actual else 0
+        self._validar_cantidad(cantidad, acumulada)
+        nuevo_total = cantidad + acumulada
         if self._inventario.stock_disponible(producto.codigo) < nuevo_total:
             raise StockInsuficiente('Stock insuficiente')
         self._lineas[producto.codigo] = Linea(producto, nuevo_total)
