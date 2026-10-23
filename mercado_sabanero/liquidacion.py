@@ -14,6 +14,12 @@ class ResultadoCompra:
     iva_por_producto: dict
 
 
+def _costo_envio(municipio, bases_gravadas, cupon):
+    if bases_gravadas >= 150000 or envio_gratis_por_cupon(cupon):
+        return 0
+    return 8000 if municipio.strip().casefold() == 'sincelejo' else 15000
+
+
 def liquidar(carrito, municipio, categoria='ESTANDAR', cupon=None):
     subtotal = sum(linea.bruto for linea in carrito.lineas)
     porcentaje = descuento_final(subtotal, cupon)
@@ -29,11 +35,6 @@ def liquidar(carrito, municipio, categoria='ESTANDAR', cupon=None):
         iva_por_producto[linea.producto.codigo] = iva_linea
         if linea.producto.iva_porcentaje > 0:
             bases_con_iva += base
-    if bases_con_iva >= 150000 or envio_gratis_por_cupon(cupon):
-        envio = 0
-    elif municipio.strip().casefold() == 'sincelejo':
-        envio = 8000
-    else:
-        envio = 15000
+    envio = _costo_envio(municipio, bases_con_iva, cupon)
     total = subtotal - descuento + iva_total + envio
     return ResultadoCompra(subtotal, descuento, iva_total, envio, total, iva_por_producto)
