@@ -2,6 +2,7 @@
 from dataclasses import dataclass
 from .cupones import descuento_final, envio_gratis_por_cupon
 from .iva import valor_con_descuento, iva_de_linea
+from .puntos import calcular_puntos
 
 
 @dataclass(frozen=True)
@@ -12,6 +13,7 @@ class ResultadoCompra:
     envio: int
     total: int
     iva_por_producto: dict
+    puntos: int
 
 
 def _costo_envio(municipio, bases_gravadas, cupon):
@@ -37,4 +39,5 @@ def liquidar(carrito, municipio, categoria='ESTANDAR', cupon=None):
             bases_con_iva += base
     envio = _costo_envio(municipio, bases_con_iva, cupon)
     total = subtotal - descuento + iva_total + envio
-    return ResultadoCompra(subtotal, descuento, iva_total, envio, total, iva_por_producto)
+    puntos = calcular_puntos(total - envio, categoria)
+    return ResultadoCompra(subtotal, descuento, iva_total, envio, total, iva_por_producto, puntos)
