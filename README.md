@@ -1,7 +1,5 @@
 # Mercado Sabanero - pruebas unitarias y TDD
 
-Actividad de logica de negocio (sin interfaz ni base de datos), desarrollada de forma individual.
-
 ## Ejecutar
 
 Se necesita Python 3.10 o superior.
@@ -38,6 +36,3 @@ Ver `docs/PLAN_PRUEBAS.md`, `docs/MATRIZ_CASOS.csv` y `docs/REGISTRO_DEFECTOS.md
 - En una misma compra se usa a lo sumo un cupon.
 - El limite de 50 unidades es por producto dentro del carrito, aun despues de agregarlo dos veces.
 
-## Nota de entrega
-
-Para completar la entrega pedida por la docente, publicar este repositorio en GitHub y anadir el nombre del estudiante y el enlace en el informe. La sustentacion TDD en vivo depende de la docente. La tarea se presenta individualmente y no registra revision entre companeros.
