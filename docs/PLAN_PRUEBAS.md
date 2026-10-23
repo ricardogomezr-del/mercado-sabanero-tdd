@@ -1,9 +1,4 @@
-# Plan de pruebas agil - Mercado Sabanero
 
-**Fecha:** 23 de octubre de 2026  
-**Modalidad preparada:** individual (sujeta a la autorizacion de la docente).  
-**Proyecto:** modulo de liquidacion de compras.  
-**Alcance:** solo logica de negocio en Python; sin interfaz de usuario ni base de datos.
 
 ## 1. Objetivo
 
