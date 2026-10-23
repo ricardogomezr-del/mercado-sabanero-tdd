@@ -6,7 +6,9 @@ class CuponInvalido(ValueError):
     pass
 
 
-CUPONES = {'SABANERO10': True, 'ENVIOGRATIS': True, 'VENCIDO10': False}
+CUPON_DESCUENTO = 'SABANERO10'
+CUPON_ENVIO = 'ENVIOGRATIS'
+CUPONES = {CUPON_DESCUENTO: True, CUPON_ENVIO: True, 'VENCIDO10': False}
 
 
 def validar_cupon(cupon):
@@ -16,14 +18,14 @@ def validar_cupon(cupon):
 
 def descuento_cupon(subtotal, cupon):
     validar_cupon(cupon)
-    if cupon == 'SABANERO10' and subtotal >= 50000:
+    if cupon == CUPON_DESCUENTO and subtotal >= 50000:
         return 10
     return 0
 
 
 def envio_gratis_por_cupon(cupon):
     validar_cupon(cupon)
-    return cupon == 'ENVIOGRATIS'
+    return cupon == CUPON_ENVIO
 
 
 def descuento_final(subtotal, cupon=None):
